@@ -1,0 +1,13 @@
+{
+	
+	"OutsideAirTemperature":{ "Address": 0x0E8C, "DataType": "short", "Factor": 0.00390625 },
+	
+	"Pressure":				{ "Address": 0x0F48, "DataType": "ushort", "Factor": 0.0625 },
+	
+	"AmbientWindSpeed":		{ "Address": 0x0E90, "DataType": "ushort" },
+
+	"AmbientWindDirection":	{ "Address": 0x0E92, "DataType": "ushort", "Factor": 0.0054931640625 },
+
+	"IsRainingDay":			{ "Address": 0x04CC, "DataType": "byte" }, // BOOLEAN
+
+}

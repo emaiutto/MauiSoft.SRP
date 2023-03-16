@@ -1,0 +1,79 @@
+﻿{
+
+    "0": {
+        "BRR": [],
+        "BRL": [],
+        "SRR": [],
+        "SRL": [],
+        "BTN": [],
+        "DSL": [ "MCP_COURSE_CA", "000", "" ],
+        "DSR": [ "MCP_COURSE_FO", "000", "" ],
+
+    },
+
+    "1": {
+        "BRR": [],
+        "BRL": [],
+        "SRR": [],
+        "SRL": [],
+        "BTN": [],
+        "DSL": [ "MCP_IAS_MACH", "000", "MCP_annunSPEED" ],
+        "DSR": [ "MCP_HEADING", "000", "MCP_annunHDG_SEL" ],
+
+    },
+
+    "2": {
+        "BRR": [],
+        "BRL": [],
+        "SRR": [],
+        "SRL": [],
+        "BTN": [],
+        "DSL": [ "MCP_ALTITUDE", "0", "MCP_annunALT_HOLD" ],
+        "DSR": [ "MCP_VERT_SPEED", "0", "MCP_annunVS" ],
+
+    },
+
+    "3": {
+        "BRR": [],
+        "BRL": [],
+        "SRR": [],
+        "SRL": [],
+        "BTN": [],
+        "DSL": [ "Pressure", "", "" ],
+        "DSR": [ "Pressure", "", "" ],
+
+    },
+
+    "4": {
+        "BRR": [ "EFIS_BARO_INC", "EFIS_BARO_REL" ],
+        "BRL": [ "EFIS_BARO_DEC", "EFIS_BARO_REL" ],
+        "SRR": [],
+        "SRL": [],
+        "BTN": [ "EFIS_BARO_STD_toggle" ],
+        "DSL": [ "Pressure", "0", "" ],
+        "DSR": [ "Kohlsman", "0", "" ],
+
+    },
+
+    "5": {
+        "BRR": [ "NAV1_RADIO_WHOLE_INC" ],
+        "BRL": [ "NAV1_RADIO_WHOLE_DEC" ],
+        "SRR": [ "NAV1_RADIO_FRACT_INC" ],
+        "SRL": [ "NAV1_RADIO_FRACT_DEC" ],
+        "BTN": [ "NAV1_RADIO_SWAP" ],
+        "DSL": [ "NAV1_Active", "000.00", "" ],
+        "DSR": [ "NAV1_StandBy", "000.00", "" ],
+
+    },
+
+    "6": {
+        "BRR": [],
+        "BRL": [],
+        "SRR": [],
+        "SRL": [],
+        "BTN": [ "CROSSFEED" ],
+        "DSL": [ "FUEL_QtyLeft", "0.00", "FUEL_CrossFeedSw" ],
+        "DSR": [ "FUEL_QtyRight", "0.00", "FUEL_CrossFeedSw" ],
+
+    }
+}

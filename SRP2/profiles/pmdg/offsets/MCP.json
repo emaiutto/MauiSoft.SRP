@@ -1,0 +1,24 @@
+{
+	
+	"MCP_COURSE_CA":		{ "Address": 0x6520, "DataType": "ushort" },
+
+	"MCP_IAS_MACH":			{ "Address": 0x6524, "DataType": "float" },
+	
+	"MCP_HEADING":			{ "Address": 0x652C, "DataType": "ushort" },
+
+	"MCP_ALTITUDE":			{ "Address": 0x652E, "DataType": "ushort" },
+
+	"MCP_VERT_SPEED":		{ "Address": 0x6530, "DataType": "short" },
+	 
+	"MCP_COURSE_FO":		{ "Address": 0x6522, "DataType": "ushort" },
+
+
+	"MCP_annunSPEED":		{ "Address": 0x653C, "DataType": "byte" },
+
+	"MCP_annunHDG_SEL":		{ "Address": 0x653F, "DataType": "byte"	},
+
+	"MCP_annunALT_HOLD":	{ "Address": 0x6543, "DataType": "byte" },
+
+	"MCP_annunVS":			{ "Address": 0x6544, "DataType": "byte" },
+
+}

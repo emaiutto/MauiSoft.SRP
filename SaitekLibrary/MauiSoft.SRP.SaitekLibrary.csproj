@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>none</ErrorReport>
+    <Authors>Esteban Maiutto</Authors>
+    <Product>SRP</Product>
+    <Company>Maui Soft</Company>
+    <PackageTags>Saitek;Radio;Flight Simulator</PackageTags>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <WarningLevel>6</WarningLevel>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <WarningLevel>6</WarningLevel>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FsuipcWrapper\MauiSoft.SRP.FsuipcWrapper.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="MauiSoft.SRP.MyExtensions">
+      <HintPath>..\..\..\..\..\..\COMPONENTS\NET CORE 6.0 RELEASE\MauiSoft.SRP.MyExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\..\..\..\COMPONENTS\NET CORE 6.0 RELEASE\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="TinyHIDLibrary">
+      <HintPath>..\..\..\..\..\..\COMPONENTS\NET CORE 6.0 RELEASE\TinyHIDLibrary.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="System.Diagnostics" />
+    <Using Include="System.Globalization" />
+  </ItemGroup>
+
+</Project>

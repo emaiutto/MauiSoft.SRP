@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>True</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <StartupObject>MauiSoft.SRP.Program</StartupObject>
+    <PlatformTarget>x64</PlatformTarget>
+    <ApplicationIcon>airplane.ico</ApplicationIcon>
+    <Authors>Esteban Maiutto</Authors>
+    <Company>Maui Soft</Company>
+    <Product>SRP</Product>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="airplane.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FsuipcWrapper\MauiSoft.SRP.FsuipcWrapper.csproj" />
+    <ProjectReference Include="..\SaitekLibrary\MauiSoft.SRP.SaitekLibrary.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="MauiSoft.SRP.MyExtensions">
+      <HintPath>..\..\..\..\..\..\COMPONENTS\NET CORE 6.0 RELEASE\MauiSoft.SRP.MyExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="MauiSoft.SRP.Profile">
+      <HintPath>..\..\..\..\..\..\COMPONENTS\NET CORE 6.0 RELEASE\MauiSoft.SRP.Profile.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="profiles\pmdg\commands\radio.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="profiles\pmdg\offsets\radio.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="profiles\pmdg\config.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

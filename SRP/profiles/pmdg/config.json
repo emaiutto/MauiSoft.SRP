@@ -1,0 +1,71 @@
+﻿{
+    "0": {
+        "BRR": [ "NAV1_RADIO_WHOLE_INC" ],
+        "BRL": [ "NAV1_RADIO_WHOLE_DEC" ],
+        "SRR": [ "NAV1_RADIO_FRACT_INC" ],
+        "SRL": [ "NAV1_RADIO_FRACT_DEC" ],
+        "BTN": [ "NAV1_RADIO_SWAP" ],
+        "DSL": [ "NAV1_Active", "000.00", "" ],
+        "DSR": [ "NAV1_StandBy", "000.00", "" ],
+    },
+
+    "1": {
+        "BRR": [ "NAV1_RADIO_WHOLE_INC" ],
+        "BRL": [ "NAV1_RADIO_WHOLE_DEC" ],
+        "SRR": [ "NAV1_RADIO_FRACT_INC" ],
+        "SRL": [ "NAV1_RADIO_FRACT_DEC" ],
+        "BTN": [ "NAV1_RADIO_SWAP" ],
+        "DSL": [ "NAV1_Active", "000.00", "" ],
+        "DSR": [ "NAV1_StandBy", "000.00", "" ],
+    },
+
+    "2": {
+        "BRR": [ "NAV1_RADIO_WHOLE_INC" ],
+        "BRL": [ "NAV1_RADIO_WHOLE_DEC" ],
+        "SRR": [ "NAV1_RADIO_FRACT_INC" ],
+        "SRL": [ "NAV1_RADIO_FRACT_DEC" ],
+        "BTN": [ "NAV1_RADIO_SWAP" ],
+        "DSL": [ "NAV1_Active", "000.00", "" ],
+        "DSR": [ "NAV1_StandBy", "000.00", "" ],
+    },
+
+    "3": {
+        "BRR": [ "NAV2_RADIO_WHOLE_INC" ],
+        "BRL": [ "NAV2_RADIO_WHOLE_DEC" ],
+        "SRR": [ "NAV2_RADIO_FRACT_INC" ],
+        "SRL": [ "NAV2_RADIO_FRACT_DEC" ],
+        "BTN": [ "NAV2_RADIO_SWAP" ],
+        "DSL": [ "NAV2_Active", "000.00", "" ],
+        "DSR": [ "NAV2_StandBy", "000.00", "" ],
+    },
+
+    "4": {
+        "BRR": [ "NAV1_RADIO_WHOLE_INC" ],
+        "BRL": [ "NAV1_RADIO_WHOLE_DEC" ],
+        "SRR": [ "NAV1_RADIO_FRACT_INC" ],
+        "SRL": [ "NAV1_RADIO_FRACT_DEC" ],
+        "BTN": [ "NAV1_RADIO_SWAP" ],
+        "DSL": [ "NAV1_Active", "000.00", "" ],
+        "DSR": [ "NAV1_StandBy", "000.00", "" ],
+    },
+
+    "5": {
+        "BRR": [ "NAV1_RADIO_WHOLE_INC" ],
+        "BRL": [ "NAV1_RADIO_WHOLE_DEC" ],
+        "SRR": [ "NAV1_RADIO_FRACT_INC" ],
+        "SRL": [ "NAV1_RADIO_FRACT_DEC" ],
+        "BTN": [ "NAV1_RADIO_SWAP" ],
+        "DSL": [ "NAV1_Active", "000.00", "" ],
+        "DSR": [ "NAV1_StandBy", "000.00", "" ],
+    },
+
+    "6": {
+        "BRR": [ "NAV1_RADIO_WHOLE_INC" ],
+        "BRL": [ "NAV1_RADIO_WHOLE_DEC" ],
+        "SRR": [ "NAV1_RADIO_FRACT_INC" ],
+        "SRL": [ "NAV1_RADIO_FRACT_DEC" ],
+        "BTN": [ "NAV1_RADIO_SWAP" ],
+        "DSL": [ "NAV1_Active", "000.00", "" ],
+        "DSR": [ "NAV1_StandBy", "000.00", "" ],
+    }
+}

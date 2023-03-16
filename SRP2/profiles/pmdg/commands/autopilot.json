@@ -1,0 +1,52 @@
+{
+	"MCP_AT_BUTTON":		{ "Command": 70012, "Parameter": 536870912 },
+	"MCP_FD_BUTTON":		{ "Command": 70010, "Parameter": 536870912 },
+
+	"MCP_SPD_BUTTON":		{ "Command": 70014, "Parameter": 536870912 },
+	
+	"MCP_VNAV_BUTTON":		{ "Command": 70018, "Parameter": 536870912 },
+	"MCP_LVL_CHG_BUTTON": 	{ "Command": 70023, "Parameter": 536870912 },
+
+	"MCP_HDGSEL_BUTTON":	{ "Command": 70024, "Parameter": 536870912 },
+
+	"MCP_LNAV_BUTTON":		{ "Command": 70029, "Parameter": 536870912 },
+	"MCP_APP_BUTTON":		{ "Command": 70025, "Parameter": 536870912 },
+
+	"MCP_ALTHLD_BUTTON":	{ "Command": 70026, "Parameter": 536870912 },
+	"MCP_VS_BUTTON":		{ "Command": 70027, "Parameter": 536870912 },
+
+	"MCP_CMD_BUTTON":		{ "Command": 70034, "Parameter": 536870912 },
+	"MCP_CWS_BUTTON":		{ "Command": 70036, "Parameter": 536870912 },
+
+
+	// AUTOPILOT LEFT COURSE (CAPTAIN)
+	"MCP_CRSL_INC":     { "Command": 70008, "Parameter": 16384 },
+	"MCP_CRSL_DEC":	    { "Command": 70008, "Parameter": 8192 },
+	"MCP_CRSL_REL":	    { "Command": 70008, "Parameter": 262144 },
+
+	// AUTOPILOT SPEED
+	"MCP_SPEED_INC":	{ "Command": 70016, "Parameter": 16384 },
+	"MCP_SPEED_DEC":	{ "Command": 70016, "Parameter": 8192 },
+	"MCP_SPEED_REL":	{ "Command": 70016, "Parameter": 262144 },
+
+	// AUTOPILOT HEADING
+	"MCP_HEADING_INC":	{ "Command": 70022, "Parameter": 16384 },
+	"MCP_HEADING_DEC":	{ "Command": 70022, "Parameter": 8192 },
+	"MCP_HEADING_REL":	{ "Command": 70022, "Parameter": 262144 },
+
+	// AUTOPILOT ALTITUDE
+	"MCP_ALTITUDE_INC":	{ "Command": 70032, "Parameter": 16384 },
+	"MCP_ALTITUDE_DEC":	{ "Command": 70032, "Parameter": 8192 },
+	"MCP_ALTITUDE_REL":	{ "Command": 70032, "Parameter": 262144 },
+
+	// AUTOPILOT VERTICAL SPEED
+	"MCP_VERSPEED_INC":	{ "Command": 70033, "Parameter": 16384 },
+	"MCP_VERSPEED_DEC":	{ "Command": 70033, "Parameter": 8192 },
+	"MCP_VERSPEED_REL":	{ "Command": 70033, "Parameter": 262144 },
+
+	// AUTOPILOT RIGHT COURSE (FIRST OFFICER)
+	"MCP_CRSR_INC":     { "Command": 70041, "Parameter": 16384 },
+	"MCP_CRSR_DEC":	    { "Command": 70041, "Parameter": 8192 },
+	"MCP_CRSR_REL":	    { "Command": 70041, "Parameter": 262144 }
+
+}       

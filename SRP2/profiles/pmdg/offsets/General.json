@@ -1,0 +1,8 @@
+{
+	"FUEL_QtyLeft":		{ "Address": 0x65EC, "DataType": "float", "Factor": 0.001 },
+
+	"FUEL_QtyRight":	{ "Address": 0x65F0, "DataType": "float", "Factor": 0.001 },
+
+	"FUEL_CrossFeedSw":	{ "Address": 0x645C, "DataType": "byte" },
+
+}

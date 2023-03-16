@@ -1,0 +1,15 @@
+{
+
+	"AircraftProfile":		{ "Address": 0x9540, "DataType": "string", "Length": 64 },
+
+	"Kohlsman":				{ "Address": 0x0330, "DataType": "ushort", "Factor": 0.0625 }, // Kohlsman WINDOW
+
+	"ELEVATOR_TRIM":		{ "Address": 0x2EA0, "DataType": "double", "Factor": 57.2957795130 }, // GRADOS SEXAGESIMALES
+
+	"TrueHeading":			{ "Address": 0x6038, "DataType": "double", "Factor": 57.2957795130 },
+
+	"NAV1_Active":			{ "Address": 0x0350, "DataType": "ushort", "Frecuency": true },
+
+	"NAV1_StandBy":			{ "Address": 0x311E, "DataType": "ushort", "Frecuency": true }
+
+}

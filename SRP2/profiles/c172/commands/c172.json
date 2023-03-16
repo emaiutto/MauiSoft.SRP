@@ -1,0 +1,7 @@
+{
+	"MAGNETO_OFF"	: { "Command": 66400, "Parameter": 0 },
+	"MAGNETO_RIGHT"	: { "Command": 66400, "Parameter": 1 },
+	"MAGNETO_LEFT"	: { "Command": 66400, "Parameter": 2 },
+	"MAGNETO_BOTH"	: { "Command": 66400, "Parameter": 3 },
+	"MAGNETO_START"	: { "Command": 66400, "Parameter": 4 },
+}       

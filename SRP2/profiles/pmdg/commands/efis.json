@@ -1,0 +1,12 @@
+{
+    "EFIS_BARO_INC": { "Command": 69997, "Parameter": 16384 },
+
+    "EFIS_BARO_DEC": { "Command": 69997, "Parameter": 8192 },
+
+    "EFIS_BARO_REL": { "Command": 69997, "Parameter": 262144 },
+
+    "EFIS_BARO_STD_toggle": { "Command": 69999, "Parameter": 536870912 },
+
+    "CROSSFEED": { "Command": 69681, "Parameter": 536870912 }
+
+}

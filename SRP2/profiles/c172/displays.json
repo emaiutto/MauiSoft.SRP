@@ -1,0 +1,35 @@
+﻿{
+
+ "0": {"Label": "SAITEK", "Data": ["OutsideAirTemperature","Eng1_RPM",
+								   "TrueHeading","TrueHeading",
+								   "Pressure","Kohlsman",
+								   "Pressure","Kohlsman",
+								   "OutsideAirTemperature","OutsideAirTemperature",
+								   "Pressure","Kohlsman",
+								   "Eng1_RPM","Eng1_RPM"]},
+
+ "1": {"Label": "Airport", "Data": ["CurrentAirport"]},
+
+ "2": {"Label": "OAT", "Data": ["OutsideAirTemperature"]},
+
+ "3": {"Label": "Magnetic\nDeclination", "Data": ["MagneticDeclination"]},
+
+ "5": {"Label": "GPS POSITION", "Data": ["GPS_Latitude","GPS_Longitude"]},
+
+ "6": {"Label": "", "Data": ["ON_GROUND"]},
+
+ "7": {"Label": "True Heading", "Data": ["TrueHeading"]},
+
+ "8": {"Label": "Magnetic\nHeading", "Data": ["MagneticDeclination","TrueHeading"]},
+
+ "9": {"Label": "Ground Altitude", "Data": ["GroundAltitudeFeets"]},
+
+ "10": {"Label": "Home", "Data": ["GPS_Latitude","GPS_Longitude"]},
+
+ "11": {"Label": "Pressure", "Data": ["Pressure"]},
+
+ "12": {"Label": "Kohlsman", "Data": ["Kohlsman"]},
+ 
+ "13": {"Label": "TRIM", "Data": ["ELEVATOR_TRIM"]},
+
+}

@@ -1,0 +1,16 @@
+{
+	"ON_GROUND":			{ "Address": 0x0366, "DataType": "byte" },
+	
+	"CurrentAirport":		{ "Address": 0x0658, "DataType": "string", "Length": 4 },
+
+	"GPS_Latitude":			{ "Address": 0x6010, "DataType": "double" },
+
+	"GPS_Longitude":		{ "Address": 0x6018, "DataType": "double" },
+
+	"GroundAltitudeFeets":	{ "Address": 0x0020, "DataType": "ushort", "Factor": 0.01281578125 },
+
+	"MagneticDeclination":	{ "Address": 0x6028, "DataType": "double", "Factor": 57.2957795130 },
+
+	
+		
+}

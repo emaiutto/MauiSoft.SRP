@@ -1,0 +1,11 @@
+{
+
+	"NAV1_RADIO_WHOLE_INC": { "Command": 65641 },
+	"NAV1_RADIO_WHOLE_DEC": { "Command": 65640 },
+
+	"NAV1_RADIO_FRACT_INC": { "Command": 65643 },
+	"NAV1_RADIO_FRACT_DEC": { "Command": 65642 },
+
+	"NAV1_RADIO_SWAP": { "Command": 66448 }
+
+}       
