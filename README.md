@@ -5,7 +5,7 @@ SRP es un software para la integración del Saitek Radio Panel en simuladores de
 Características principales:
 Compatible con los simuladores de vuelo más populares, incluyendo P3D versión 4.
 Integración con el Saitek Radio Panel para una experiencia de simulación más realista.
-Funcionalidades avanzadas de radio, incluyendo selección de frecuencias, modos de transmisión y recepción, y ajuste de volumen para COM1, COM2, NAV1, NAV2 y ADF.
+Funcionalidades avanzadas de radio, incluyendo selección de frecuencias para COM1, COM2, NAV1, NAV2 y ADF.
 Soporte para componentes de terceros, incluyendo el cliente de FSUIPC para la comunicación entre el software de simulación de vuelo y el Saitek Radio Panel.
 Personalizable por perfil de avión con archivos bien estructurados y simples de tipo JSON.
 Soporta cualquier offset que pueda leer FSUIPC y asignar comandos específicos.
