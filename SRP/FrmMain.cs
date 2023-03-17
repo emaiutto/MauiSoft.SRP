@@ -100,7 +100,9 @@ namespace MauiSoft.SRP
 
             try
             {
-                var cmds = Config.Instance.Get(index: RadioPanel.Switches[0]).BRR;
+                var cmds = Config.Instance.Get(index: RadioPanel.Switches[0])?.BRR;
+
+                if (cmds == null) return;
 
                 foreach (var cmd in cmds) FSUIPCHelper.Instance.Execute(cmd);
 
@@ -116,7 +118,9 @@ namespace MauiSoft.SRP
 
             try
             {
-                var cmds = Config.Instance.Get(RadioPanel.Switches[0]).BRL;
+                var cmds = Config.Instance.Get(RadioPanel.Switches[0])?.BRL;
+
+                if (cmds == null) return;
 
                 foreach (var cmd in cmds) FSUIPCHelper.Instance.Execute(cmd);
 
@@ -133,7 +137,9 @@ namespace MauiSoft.SRP
 
             try
             {
-                var cmds = Config.Instance.Get(RadioPanel.Switches[0]).SRR;
+                var cmds = Config.Instance.Get(RadioPanel.Switches[0])?.SRR;
+
+                if (cmds == null) return;
 
                 foreach (var cmd in cmds) FSUIPCHelper.Instance.Execute(cmd);
 
@@ -150,7 +156,9 @@ namespace MauiSoft.SRP
 
             try
             {
-                var cmds = Config.Instance.Get(RadioPanel.Switches[0]).SRL;
+                var cmds = Config.Instance.Get(RadioPanel.Switches[0])?.SRL;
+
+                if (cmds == null) return;
 
                 foreach (var cmd in cmds) FSUIPCHelper.Instance.Execute(cmd);
 
@@ -169,7 +177,9 @@ namespace MauiSoft.SRP
 
             try
             {
-                var cmds = Config.Instance.Get(RadioPanel.Switches[1]).BRR;
+                var cmds = Config.Instance.Get(RadioPanel.Switches[1])?.BRR;
+
+                if (cmds == null) return;
 
                 foreach (var cmd in cmds) FSUIPCHelper.Instance.Execute(cmd);
 
@@ -186,7 +196,9 @@ namespace MauiSoft.SRP
 
             try
             {
-                var cmds = Config.Instance.Get(RadioPanel.Switches[1]).BRL;
+                var cmds = Config.Instance.Get(RadioPanel.Switches[1])?.BRL;
+
+                if (cmds == null) return;
 
                 foreach (var cmd in cmds) FSUIPCHelper.Instance.Execute(cmd);
 
@@ -202,7 +214,9 @@ namespace MauiSoft.SRP
 
             try
             {
-                var cmds = Config.Instance.Get(RadioPanel.Switches[1]).SRR;
+                var cmds = Config.Instance.Get(RadioPanel.Switches[1])?.SRR;
+
+                if (cmds == null) return;
 
                 foreach (var cmd in cmds) FSUIPCHelper.Instance.Execute(cmd);
 
@@ -218,7 +232,9 @@ namespace MauiSoft.SRP
 
             try
             {
-                var cmds = Config.Instance.Get(RadioPanel.Switches[1]).SRL;
+                var cmds = Config.Instance.Get(RadioPanel.Switches[1])?.SRL;
+                
+                if (cmds == null) return;
 
                 foreach (var cmd in cmds) FSUIPCHelper.Instance.Execute(cmd);
 
@@ -236,7 +252,9 @@ namespace MauiSoft.SRP
 
             try
             {
-                var cmds = Config.Instance.Get(RadioPanel.Switches[0]).BTN;
+                var cmds = Config.Instance.Get(RadioPanel.Switches[0])?.BTN;
+
+                if (cmds == null) return;
 
                 foreach (var cmd in cmds) FSUIPCHelper.Instance.Execute(cmd);
 
@@ -253,7 +271,9 @@ namespace MauiSoft.SRP
 
             try
             {
-                var cmds = Config.Instance.Get(RadioPanel.Switches[1]).BTN;
+                var cmds = Config.Instance.Get(RadioPanel.Switches[1])?.BTN;
+
+                if (cmds == null) return;
 
                 foreach (var cmd in cmds) FSUIPCHelper.Instance.Execute(cmd);
 

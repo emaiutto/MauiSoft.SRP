@@ -54,7 +54,7 @@ namespace MauiSoft.SRP.SaitekLibrary
 
             rnd = new Random(); // FOR TESTING ONLY
 
-            Device = HidDevices.GetDevice(0x06a3, 0x0d05);
+            Device = HidDevices.GetDevice(0x06a3, 0x0d05); // VendorId & ProductId
 
             Device?.OpenDevice();
 
