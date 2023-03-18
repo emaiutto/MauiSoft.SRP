@@ -56,7 +56,7 @@
             toolStripMenuItemCloseApp.Name = "toolStripMenuItemCloseApp";
             toolStripMenuItemCloseApp.Size = new Size(110, 28);
             toolStripMenuItemCloseApp.Text = "&Exit";
-            toolStripMenuItemCloseApp.Click += toolStripMenuItemCloseApp_Click;
+            toolStripMenuItemCloseApp.Click += ToolStripMenuItemCloseApp_Click;
             // 
             // timer1
             // 

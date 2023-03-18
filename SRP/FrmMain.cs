@@ -10,7 +10,7 @@ namespace MauiSoft.SRP
         RadioPanel? RadioPanel;
 
 
-        string? last;
+        // string? last;
 
         // 10000000L ticks -> 1 segundo
 
@@ -305,7 +305,7 @@ namespace MauiSoft.SRP
             ClearNotifyIcon();
         }
 
-        private void toolStripMenuItemCloseApp_Click(object sender, EventArgs e)
+        private void ToolStripMenuItemCloseApp_Click(object sender, EventArgs e)
         {
             try
             {

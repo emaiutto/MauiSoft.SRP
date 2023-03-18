@@ -1,4 +1,5 @@
-﻿using FSUIPC;
+﻿using System.Diagnostics;
+using FSUIPC;
 using Newtonsoft.Json;
 
 namespace MauiSoft.SRP.FsuipcWrapper
@@ -97,47 +98,60 @@ namespace MauiSoft.SRP.FsuipcWrapper
 
                     };
 
-                    switch (item.DataType)
-                    {
+                    // IMPORTANTE!!! En datatype en el JSON siempre usar los tipos .NET (sin el namespace System.)
+                    // https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/built-in-types?redirectedfrom=MSDN
 
-                        case "string":
+                    Type? tipo = null; // tipo interno del generic (DataType). El tipo de datos del OFFSET
+
+
+                    try
+                    {
+                        if (item.DataType != null)
+                            tipo = Type.GetType($"System.{item.DataType}"); // Si no hace MATCHING... sale NULL!
+                    }
+                    catch
+                    {
+                        // LOG (tipo de dato erroreo. Verificar JSON)
+                        Debug.WriteLine("Utilizar tipo de datos .NET sin el namespace System.");
+                    }
+
+                    if (tipo == null)
+                    {
+                        Debug.WriteLine("Utilizar tipo de datos .NET sin el namespace System.");
+                        continue; // LOG (tipo de dato erroreo. Verificar JSON)
+                    }
+                    
+
+                    
+                    // Construye el Generic en base al DataType (interno)
+                    Type? tipoGenerado = typeof(Offset<>).MakeGenericType(new Type[] { tipo });
+
+                    if (tipoGenerado == null) continue; // LOG (offset no ingresado al diccionario)
+
+                    try
+                    {
+                        // El único caso particular es STRING que debe recibir Lenght como parámetro
+
+                        if (item.DataType == "String")
+                        {
 
                             int len = item.Length == null ? 0 : (int)item.Length;
 
-                            item.Offset = new Offset<string>(item.Address, len);
-                            break;
+                            if (len == 0) throw new Exception("La longitud del STRING no puede ser 0");
 
-                        case "short":
+                            item.Offset = Activator.CreateInstance(tipoGenerado, new object[] { item.Address, len });
+                        }
+                        else
+                        {
+                            item.Offset = Activator.CreateInstance(tipoGenerado, new object[] { item.Address });
+                        }
 
-                            item.Offset = new Offset<short>(item.Address);
-                            break;
-
-                        case "ushort":
-
-                            item.Offset = new Offset<ushort>(item.Address);
-                            break;
-
-
-                        case "byte":
-
-                            item.Offset = new Offset<byte>(item.Address);
-                            break;
-
-
-                        case "float":
-
-                            item.Offset = new Offset<float>(item.Address);
-                            break;
-
-
-                        case "double":
-
-                            item.Offset = new Offset<double>(item.Address);
-                            break;
-
+                        Dictionary.Add(value.Key, item);
                     }
-
-                    Dictionary.Add(value.Key, item);
+                    catch (Exception ex)
+                    {
+                        Debug.WriteLine("Falló el ingreso del OFFSET al diccionario", ex.Message);
+                    } 
 
                 }
 
@@ -161,32 +175,32 @@ namespace MauiSoft.SRP.FsuipcWrapper
             switch (Dictionary[key].DataType)
             {
 
-                case "string": // string
+                case "String":
 
                     return ((Offset<string>)Convert.ChangeType(Dictionary[key].Offset, typeof(Offset<string>), CultureInfo.InvariantCulture)).Value;
 
 
-                case "short": // short --> FLOAT
+                case "Int16":
 
                     return ((Offset<short>)Convert.ChangeType(Dictionary[key].Offset, typeof(Offset<short>), CultureInfo.InvariantCulture)).Value * factor;
 
 
-                case "ushort": // ushort --> FLOAT
+                case "UInt16":
 
                     return ((Offset<ushort>)Convert.ChangeType(Dictionary[key].Offset, typeof(Offset<ushort>), CultureInfo.InvariantCulture)).Value * factor;
 
 
-                case "byte": // byte --> BOOL (del codigo consumidor)
+                case "Byte": // byte --> BOOL (del codigo consumidor)
 
                     return ((Offset<byte>)Convert.ChangeType(Dictionary[key].Offset, typeof(Offset<byte>), CultureInfo.InvariantCulture)).Value;
 
 
-                case "float": // float --> float
+                case "Single":
 
                     return ((Offset<float>)Convert.ChangeType(Dictionary[key].Offset, typeof(Offset<float>), CultureInfo.InvariantCulture)).Value * factor;
 
 
-                case "double": // double --> float
+                case "Double":
 
                     return ((Offset<double>)Convert.ChangeType(Dictionary[key].Offset, typeof(Offset<double>), CultureInfo.InvariantCulture)).Value * factor;
 

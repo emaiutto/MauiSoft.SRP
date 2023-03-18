@@ -1,11 +1,11 @@
 {
 
-	"NAV1_Active":			{ "Address": 0x0350, "DataType": "ushort", "Frecuency": true },
+	"NAV1_Active":			{ "Address": 0x0350, "DataType": "UInt16", "Frecuency": true },
 
-	"NAV1_StandBy":			{ "Address": 0x311E, "DataType": "ushort", "Frecuency": true },
+	"NAV1_StandBy":			{ "Address": 0x311E, "DataType": "UInt16", "Frecuency": true },
 
-	"NAV2_Active":			{ "Address": 0x0352, "DataType": "ushort", "Frecuency": true },
+	"NAV2_Active":			{ "Address": 0x0352, "DataType": "UInt16", "Frecuency": true },
 
-	"NAV2_StandBy":			{ "Address": 0x3120, "DataType": "ushort", "Frecuency": true }
+	"NAV2_StandBy":			{ "Address": 0x3120, "DataType": "UInt16", "Frecuency": true }
 
 }
