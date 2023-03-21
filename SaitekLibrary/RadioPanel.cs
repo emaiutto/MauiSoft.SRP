@@ -1,4 +1,5 @@
-﻿using MauiSoft.SRP.FsuipcWrapper;
+﻿using System.Runtime.CompilerServices;
+using MauiSoft.SRP.FsuipcWrapper;
 using MauiSoft.SRP.MyExtensions;
 using TinyHIDLibrary;
 
@@ -6,9 +7,16 @@ namespace MauiSoft.SRP.SaitekLibrary
 {
 
     /// <summary>
-    /// No need adicional parameters
+    /// Rotary and pushbutton event handler:
+    /// It does not need parameters because the command is identified
+    /// with the corresponding bit and it is unique.
+    /// The name defines it uniquely!
     /// </summary>
     public delegate void Handler();
+
+
+    public delegate void UpdateHandler(int pos, float value);
+
 
     public sealed class RadioPanel : IDisposable
     {
@@ -19,6 +27,9 @@ namespace MauiSoft.SRP.SaitekLibrary
 #endif
 
         readonly HidDevice? Device; Task<ReadStatus>? Status;
+
+
+        public event UpdateHandler? UpdateEvent;
 
 
         #region Events
@@ -166,11 +177,12 @@ namespace MauiSoft.SRP.SaitekLibrary
                 for (int i = 0; i < DIGITOS; i++)
                     Device.FeaturesBuffer[pos * DIGITOS + i + 1] = (byte)str[i];
 
+                UpdateEvent?.Invoke(pos, x);
             }
 
             Device?.SetFeature();
-
         }
+
 #endif
 
 
@@ -189,6 +201,7 @@ namespace MauiSoft.SRP.SaitekLibrary
 
             if (Device == null) return;
 
+            
             // LIMPIAR DISPLAY (POS)
             for (int i = 1; i <= DIGITOS; i++)
                 Device.FeaturesBuffer[pos * DIGITOS + i] = CLEAR;
@@ -199,6 +212,7 @@ namespace MauiSoft.SRP.SaitekLibrary
             int index = Switches[sw]; // 0 - 6 (posicion del switch)
 
 
+            
             string[]? data = null;
 
             ConfigItem? ConfigItem = Config.Instance.Get(index);
@@ -207,29 +221,25 @@ namespace MauiSoft.SRP.SaitekLibrary
 
             if (pos == 1 || pos == 3) data = ConfigItem?.DSR; // DISPLAY RIGHT
 
-
             if (data == null) return; // RETORNA Y QUEDA LIMPIO!
 
-
-            var item = OffsetList.Instance.Dictionary[data[0]];
+            
 
             float? value = OffsetList.Instance.GetValue(data[0]);
 
             if (value == null) return; // RETORNA Y QUEDA LIMPIO!
 
 
+            var item = OffsetList.Instance.Dictionary[data[0]];
+
             if (item.Frecuency != null && (bool)item.Frecuency)
-            {
                 value = TransformFrecuency(value);
-            }
             else
-            {
                 value = (float)Math.Round((double)value, 2);
-            }
+
 
 
             // FORMAT STRING
-
             string? str = data[1].IsNullEmptyOrSpace()
                 ? (value?.ToString(CultureInfo.InvariantCulture))
                 : (value?.ToString(data[1], CultureInfo.InvariantCulture));
@@ -295,6 +305,12 @@ namespace MauiSoft.SRP.SaitekLibrary
         }
 
 
+        /// <summary>
+        /// Binary-Coded Decimal (BCD)
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static float? TransformFrecuency(float? value)
         {
 

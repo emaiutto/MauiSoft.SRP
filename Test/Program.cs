@@ -1,4 +1,4 @@
-namespace Test
+namespace MauiSoft.SRP
 {
     internal static class Program
     {

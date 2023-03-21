@@ -1,26 +1,26 @@
 ﻿using System.Diagnostics;
-using MauiSoft.SRP.LandingGearLibrary;
-using MauiSoft.SRP.McpLibrary;
 using MauiSoft.SRP.SaitekLibrary;
 
-namespace Test
+namespace MauiSoft.SRP
 {
     public partial class Form1 : Form
     {
 
-        static ROF? _MCP;
+        static RadioPanel? _Saitek;
 
-        static SaitekRadioPanel? _Saitek;
 
-        static LandingGearDevice? _LandingGearDevice;
+        //static ROF? _MCP;
+
+        //static LandingGearDevice? _LandingGearDevice;
 
 
         public Form1() => InitializeComponent();
 
+
         private void Form1_Load(object sender, EventArgs e)
         {
 
-            _Saitek = new SaitekRadioPanel();
+            _Saitek = new RadioPanel();
 
             _Saitek.EnconderB1R += Saitek_EnconderB1R;
             _Saitek.EnconderB1L += Saitek_EnconderB1L;
@@ -38,58 +38,84 @@ namespace Test
             _Saitek.Buttons2 += _Saitek_Buttons2;
 
 
-
-            _MCP = new ROF();
-
-            _MCP.CRSL_INC += MCP_CRSL_INC;
-            _MCP.CRSL_DEC += MCP_CRSL_DEC;
-
-            _MCP.SPEED_INC += MCP_SPEED_INC;
-            _MCP.SPEED_DEC += MCP_SPEED_DEC;
-
-            _MCP.HEADING_INC += MCP_HEADING_INC;
-            _MCP.HEADING_DEC += MCP_HEADING_DEC;
-
-            _MCP.ALTITUDE_INC += MCP_ALTITUDE_INC;
-            _MCP.ALTITUDE_DEC += MCP_ALTITUDE_DEC;
-
-            _MCP.VERSPEED_INC += MCP_VERSPEED_INC;
-            _MCP.VERSPEED_DEC += MCP_VERSPEED_DEC;
-
-            _MCP.CRSR_INC += MCP_CRSR_INC;
-            _MCP.CRSR_DEC += MCP_CRSR_DEC;
+            _Saitek.UpdateEvent += _Saitek_UpdateEvent;
 
 
+            //_MCP = new ROF();
 
-            _MCP.AT_BUTTON += MCP_AT_BUTTON;
-            _MCP.FD_BUTTON += MCP_FD_BUTTON;
+            //_MCP.CRSL_INC += MCP_CRSL_INC;
+            //_MCP.CRSL_DEC += MCP_CRSL_DEC;
 
-            _MCP.SPD_BUTTON += MCP_SPD_BUTTON;
+            //_MCP.SPEED_INC += MCP_SPEED_INC;
+            //_MCP.SPEED_DEC += MCP_SPEED_DEC;
 
-            _MCP.VNAV_BUTTON += MCP_VNAV_BUTTON;
-            _MCP.LVL_CHG_BUTTON += MCP_LVL_CHG_BUTTON;
+            //_MCP.HEADING_INC += MCP_HEADING_INC;
+            //_MCP.HEADING_DEC += MCP_HEADING_DEC;
 
-            _MCP.HDGSEL_BUTTON += MCP_HDGSEL_BUTTON;
+            //_MCP.ALTITUDE_INC += MCP_ALTITUDE_INC;
+            //_MCP.ALTITUDE_DEC += MCP_ALTITUDE_DEC;
 
-            _MCP.LNAV_BUTTON += MCP_LNAV_BUTTON;
-            _MCP.APP_BUTTON += MCP_APP_BUTTON;
+            //_MCP.VERSPEED_INC += MCP_VERSPEED_INC;
+            //_MCP.VERSPEED_DEC += MCP_VERSPEED_DEC;
 
-            _MCP.ALTHLD_BUTTON += MCP_ALTHLD_BUTTON;
-            _MCP.VS_BUTTON += MCP_VS_BUTTON;
-
-            _MCP.CMD_BUTTON += MCP_CMD_BUTTON;
-            _MCP.CWS_BUTTON += MCP_CWS_BUTTON;
+            //_MCP.CRSR_INC += MCP_CRSR_INC;
+            //_MCP.CRSR_DEC += MCP_CRSR_DEC;
 
 
 
-            _LandingGearDevice = new LandingGearDevice();
+            //_MCP.AT_BUTTON += MCP_AT_BUTTON;
+            //_MCP.FD_BUTTON += MCP_FD_BUTTON;
 
-            _LandingGearDevice.FlapsUp += _LandingGearDevice_FlapsUp;
-            _LandingGearDevice.FlapsDown += _LandingGearDevice_FlapsDown;
+            //_MCP.SPD_BUTTON += MCP_SPD_BUTTON;
 
-            _LandingGearDevice.LandingGearUp += _LandingGearDevice_LandingGearUp;
-            _LandingGearDevice.LandingGearDown += _LandingGearDevice_LandingGearDown;
+            //_MCP.VNAV_BUTTON += MCP_VNAV_BUTTON;
+            //_MCP.LVL_CHG_BUTTON += MCP_LVL_CHG_BUTTON;
 
+            //_MCP.HDGSEL_BUTTON += MCP_HDGSEL_BUTTON;
+
+            //_MCP.LNAV_BUTTON += MCP_LNAV_BUTTON;
+            //_MCP.APP_BUTTON += MCP_APP_BUTTON;
+
+            //_MCP.ALTHLD_BUTTON += MCP_ALTHLD_BUTTON;
+            //_MCP.VS_BUTTON += MCP_VS_BUTTON;
+
+            //_MCP.CMD_BUTTON += MCP_CMD_BUTTON;
+            //_MCP.CWS_BUTTON += MCP_CWS_BUTTON;
+
+
+
+            //_LandingGearDevice = new LandingGearDevice();
+
+            //_LandingGearDevice.FlapsUp += _LandingGearDevice_FlapsUp;
+            //_LandingGearDevice.FlapsDown += _LandingGearDevice_FlapsDown;
+
+            //_LandingGearDevice.LandingGearUp += _LandingGearDevice_LandingGearUp;
+            //_LandingGearDevice.LandingGearDown += _LandingGearDevice_LandingGearDown;
+
+        }
+
+        private void _Saitek_UpdateEvent(int pos, float value)
+        {
+
+            switch (pos)
+            {
+
+                case 0:
+                    ThreadSafe(() => DSP1.Text = value.ToString("00000"));
+                    break;
+
+                case 1:
+                    ThreadSafe(() => DSP2.Text = value.ToString("00000"));
+                    break;
+
+                case 2:
+                    ThreadSafe(() => DSP3.Text = value.ToString("00000"));
+                    break;
+
+                case 3:
+                    ThreadSafe(() => DSP4.Text = value.ToString("00000"));
+                    break;
+            }
         }
 
 
@@ -272,25 +298,25 @@ namespace Test
             Debug.WriteLine("Saitek_EnconderB1R");
         }
 
-        private void _LandingGearDevice_LandingGearDown()
-        {
-            Debug.WriteLine("LandingGearDown");
-        }
+        //private void _LandingGearDevice_LandingGearDown()
+        //{
+        //    Debug.WriteLine("LandingGearDown");
+        //}
 
-        private void _LandingGearDevice_LandingGearUp()
-        {
-            Debug.WriteLine("LandingGearUp");
-        }
+        //private void _LandingGearDevice_LandingGearUp()
+        //{
+        //    Debug.WriteLine("LandingGearUp");
+        //}
 
-        private void _LandingGearDevice_FlapsDown()
-        {
-            Debug.WriteLine("FlapsDown");
-        }
+        //private void _LandingGearDevice_FlapsDown()
+        //{
+        //    Debug.WriteLine("FlapsDown");
+        //}
 
-        private void _LandingGearDevice_FlapsUp()
-        {
-            Debug.WriteLine("FlapsUp");
-        }
+        //private void _LandingGearDevice_FlapsUp()
+        //{
+        //    Debug.WriteLine("FlapsUp");
+        //}
 
 
         #endregion
@@ -302,6 +328,7 @@ namespace Test
             try
             {
                 _Saitek?.UpdateDebug();
+
             }
             catch (Exception ex)
             {
@@ -325,12 +352,12 @@ namespace Test
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            
-            _MCP?.Dispose();
-            
+
             _Saitek?.Dispose();
 
-            _LandingGearDevice?.Dispose();
+            //_MCP?.Dispose();
+
+            //_LandingGearDevice?.Dispose();
 
         }
 

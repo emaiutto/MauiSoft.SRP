@@ -50,6 +50,9 @@ namespace MauiSoft.SRP
             RadioPanel.Buttons1 += SaitekRadioPanel_Buttons1;
             RadioPanel.Buttons2 += SaitekRadioPanel_Buttons2;
 
+
+            // DISPLAY INICIAL PARA INDICAR ACTIVIDAD
+
             RadioPanel.SetAll(220);  // 230 -  220 .
 
 
@@ -233,7 +236,7 @@ namespace MauiSoft.SRP
             try
             {
                 var cmds = Config.Instance.Get(RadioPanel.Switches[1])?.SRL;
-                
+
                 if (cmds == null) return;
 
                 foreach (var cmd in cmds) FSUIPCHelper.Instance.Execute(cmd);

@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SRP", "SRP\SRP.csproj", "{1
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiSoft.SRP.FsuipcWrapper", "FsuipcWrapper\MauiSoft.SRP.FsuipcWrapper.csproj", "{CA84E222-68B5-4075-A2EF-F5945988EEB9}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test", "Test\Test.csproj", "{5017CDCC-7BA1-4CC6-A7D2-2E689B6F756B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{CA84E222-68B5-4075-A2EF-F5945988EEB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA84E222-68B5-4075-A2EF-F5945988EEB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA84E222-68B5-4075-A2EF-F5945988EEB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5017CDCC-7BA1-4CC6-A7D2-2E689B6F756B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5017CDCC-7BA1-4CC6-A7D2-2E689B6F756B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5017CDCC-7BA1-4CC6-A7D2-2E689B6F756B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5017CDCC-7BA1-4CC6-A7D2-2E689B6F756B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
