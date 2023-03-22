@@ -353,6 +353,8 @@ namespace MauiSoft.SRP
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
 
+            _Saitek?.SetAll(220);  // 230 -  220 .
+
             _Saitek?.Dispose();
 
             //_MCP?.Dispose();
