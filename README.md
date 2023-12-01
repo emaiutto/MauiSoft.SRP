@@ -1,4 +1,4 @@
-# SRP - Saitek Radio Panel for Flight Simulators
+#SRP - Saitek Radio Panel for Flight Simulators
  
 **SRP** is a software for the integration of the **Saitek Radio Panel** in flight simulators. It is compatible with the most popular flight simulators, including **P3D version 4**, and has advanced radio functionalities, including selection of frequencies, transmission and reception modes for COM1, COM2, NAV1, NAV2 and ADF.
  
